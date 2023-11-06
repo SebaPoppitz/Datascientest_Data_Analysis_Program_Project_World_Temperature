@@ -7,4 +7,4 @@ squarify
 altair
 streamlit
 joblib
-tensorflow.keras.models
+tensorflow
