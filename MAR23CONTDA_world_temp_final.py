@@ -1,19 +1,7 @@
 import streamlit as st
 
 
-from PIL import Image
-
-# image = Image.open('climate change2.webp')
-
-# st.image(image)
-
-# ggf.: st.sidebar.image('https://cdn.pixabay.com/photo/2019/11/20/18/07/global-warming-4640729_1280.jpg', use_column_width=True) (noch bearbeiten, and. img suchen/logo)
-
-
-
 # Seitenleiste
-# page = st.sidebar.radio("Main Menu", ["Home", "Project Description", "Exploration Analysis - NASA", "Exploration Analysis - FAO", "Exploration Analysis - OWID", "Weitere Abschnitte", "Credits"])
-
 st.sidebar.markdown('<style>div.row-widget.stRadio div{color: white;}</style>', unsafe_allow_html=True)
 # st.sidebar.write('<font color="white">Main Menu</font>', unsafe_allow_html=True)
 page = st.sidebar.radio(" ", ["Home", "Project Description", 
