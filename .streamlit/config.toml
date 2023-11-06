@@ -1,0 +1,10 @@
+[theme]
+primaryColor = '#7792E3' # Ändern Sie diese Farbe für interaktive Elemente
+backgroundColor = '#FFFFFF' # Ändern Sie die Hintergrundfarbe der Hauptfläche
+secondaryBackgroundColor = '#008080' # Ändern Sie die Hintergrundfarbe der Seitenleiste
+textColor = "#000000"  # Ändern Sie die Schriftfarbe # schriftfarbe der Seitenleiste nicht separat einstellbar(?)
+
+# '#B9F1C0'
+# '#008060'
+# '#008080'
+# '#56beba'
