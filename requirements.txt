@@ -1,6 +1,6 @@
 matplotlib
 seaborn
-bokeh
+bokeh==2.4.3
 scipy
 plotly
 squarify
@@ -8,3 +8,4 @@ altair
 streamlit
 joblib
 tensorflow
+scikit-learn
