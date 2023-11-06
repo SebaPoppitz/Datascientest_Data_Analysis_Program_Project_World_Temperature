@@ -242,17 +242,17 @@ if page == "Exploration Analysis - NASA":
     formatted_df_NASA['Year'] = formatted_df_NASA['Year'].astype(int)
     
     # Formatieren der Werte in den Spalten 'Glob' bis '90N-64N'
-    formatted_df_NASA[['Glob', 'NHem', 'SHem', '24N-90N', '24S-24N', '90S-24S', '64N-90N', '44N-64N','24N-44N', 'EQU-24N', '24S-EQU', '44S-24S', '64S-44S', '90S-64S']] = formatted_df_NASA[['Glob', 'NHem', 'SHem', '24N-90N', '24S-24N', '90S-24S', '64N-90N', '44N-64N','24N-44N', 'EQU-24N', '24S-EQU', '44S-24S', '64S-44S', '90S-64S']].applymap("{:.2f}".format)
+    formatted_df_NASA[['Glob', 'NHem', 'SHem', ...]] = formatted_df_NASA[['Glob', 'NHem', 'SHem', ...]].apply(lambda x: x.apply("{:.2f}".format))
 
-    # Wenden Sie bedingte Formatierung für Farben an
+    # Apply conditional formatting for colors
     def color_negative_red(val):
-        if val != 'Year':
-            color = 'red' if float(val) > 0 else 'blue'
-            return f'color: {color}'
-        return ''
+        color = 'red' if float(val) > 0 else 'blue'
+        return f'color: {color}'
     
-    formatted_df_NASA = formatted_df_NASA.style.\
-        applymap(color_negative_red, subset=formatted_df_NASA.columns[1:])
+    # Assuming 'Year' is in the first column and should not be colored
+    # We will apply the color_negative_red function to all columns except the first
+    formatted_df_NASA_styled = formatted_df_NASA.style.map(color_negative_red, subset=pd.IndexSlice[:, formatted_df_NASA.columns[1:]])
+
     
     # Zeige nur die ersten 5 Zeilen der Daten
     st.dataframe(formatted_df_NASA, height=300, width=700)  # Höhe und Breite anpassen
@@ -429,12 +429,17 @@ if page == "Exploration Analysis - NASA":
 
     # Display the grouped outliers
     st.write('**Grouped Outliers:**')
-    st.markdown(
-        grouped_outliers.style.set_properties(**{'background-color': 'transparent', 
-                                                'color': 'black', 
-                                                'text-align': 'center'}).render(), 
-        unsafe_allow_html=True
+    # Apply styles
+    styled_outliers = grouped_outliers.style.set_properties(
+        **{
+            'background-color': 'transparent', 
+            'color': 'black', 
+            'text-align': 'center'
+        }
     )
+    
+    # Convert to HTML and use in st.markdown
+    st.markdown(styled_outliers.to_html(), unsafe_allow_html=True)
 
     st.write('')
     st.write('')
