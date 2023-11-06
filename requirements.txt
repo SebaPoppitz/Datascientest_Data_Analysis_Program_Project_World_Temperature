@@ -1,1 +1,11 @@
 matplotlib
+seaborn
+bokeh
+PIL
+scipy
+plotly
+squarify
+altair
+streamlit
+joblib
+tensorflow.keras.models
