@@ -434,7 +434,7 @@ if page == "Exploration Analysis - NASA":
     st.markdown(
         grouped_outliers.style.set_properties(**{'background-color': 'transparent', 
                                                 'color': 'black', 
-                                                'text-align': 'center'}).render(), 
+                                                'text-align': 'center'})._repr_html_(), 
         unsafe_allow_html=True
     )
 
