@@ -1,0 +1,2 @@
+Model,Scope,Features,R2 test,MAE test,MSE test,RMSE test,Best Parameters
+LSTM,Global,CO2,-2.547760320729413,0.23236897685311056,0.07008146048435902,0.2647290321901983,"{'units': 81, 'activation': 'tanh', 'batch_size': 1}"

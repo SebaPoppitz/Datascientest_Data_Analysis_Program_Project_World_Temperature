@@ -1,0 +1,5 @@
+pandas: 1.5.3
+numpy: 1.23.5
+keras: keras.src
+sklearn: 1.2.2
+optuna: 3.4.0
